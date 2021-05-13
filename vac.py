@@ -13,7 +13,7 @@ from telegram.ext import (
     CallbackContext,
 )
 
-logging.basicConfig(level=logging.DEBUG,
+logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 logger = logging.getLogger(__name__)
@@ -127,7 +127,7 @@ def main() -> None:
     dispatcher.add_handler(CommandHandler("help", help_command))
     dispatcher.add_handler(MessageHandler(Filters.regex('^[1-9][0-9]{3} ?(?!sa|sd|ss|SA|SD|SS)[A-z]{2}$'), postcode))
 
-    check_for_update_job = updater.job_queue.run_repeating(check_for_update, interval=15, first=0)
+    check_for_update_job = updater.job_queue.run_repeating(check_for_update, interval=300, first=0)
 
     updater.start_polling()
     updater.idle()
