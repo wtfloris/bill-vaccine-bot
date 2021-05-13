@@ -65,7 +65,7 @@ def postcode(update: Update, context: CallbackContext) -> None:
     if cid in users.keys():
         pcs[users[cid]].remove(cid)
         if pcs[users[cid]] == []:
-            os.remove('data/' + pc)
+            os.remove('data/' + pcs[users[cid]])
             pcs.pop(users[cid], None)
 
     users[cid] = pc
