@@ -19,21 +19,21 @@ logging.basicConfig(level=logging.INFO,
 logger = logging.getLogger(__name__)
 
 def load_obj(name):
-    with open('obj/' + name + '.pkl', 'rb') as f:
+    with open('/var/lib/bill-vaccine-bot/obj/' + name + '.pkl', 'rb') as f:
         return pickle.load(f)
 
 
-if os.path.isfile('obj/pcs.pkl'):
+if os.path.isfile('/var/lib/bill-vaccine-bot/obj/pcs.pkl'):
     pcs = load_obj('pcs')
 else:
     pcs = dict()
 
-if os.path.isfile('obj/users.pkl'):
+if os.path.isfile('/var/lib/bill-vaccine-bot/obj/users.pkl'):
     users = load_obj('users')
 else:
     users = dict()
 
-if os.path.isfile('obj/lastmsg.pkl'):
+if os.path.isfile('/var/lib/bill-vaccine-bot/obj/lastmsg.pkl'):
     lastmsg = load_obj('lastmsg')
 else:
     lastmsg = dict()
@@ -57,7 +57,7 @@ def postcode(update: Update, context: CallbackContext) -> None:
     # Create a new postcode and new file if they don't exist, or append the chat id to the existing postcode
     if pc not in pcs.keys():
         pcs[pc] = [cid]
-        os.mknod("data/" + pc)
+        os.mknod("/var/lib/bill-vaccine-bot/data/" + pc)
     else:
         pcs[pc].append(cid)
 
@@ -65,7 +65,7 @@ def postcode(update: Update, context: CallbackContext) -> None:
     if cid in users.keys():
         pcs[users[cid]].remove(cid)
         if pcs[users[cid]] == []:
-            os.remove('data/' + users[cid])
+            os.remove('/var/lib/bill-vaccine-bot/data/' + users[cid])
             pcs.pop(users[cid], None)
 
     users[cid] = pc
@@ -84,7 +84,7 @@ def help_command(update: Update, _: CallbackContext) -> None:
 def check_for_update(context: CallbackContext) -> None:
 # def check_for_update(update: Update, context: CallbackContext) -> None:
     for pc in pcs.keys():
-        with open('data/' + pc, 'r') as f:
+        with open('/var/lib/bill-vaccine-bot/data/' + pc, 'r') as f:
             content = f.read()
 
             # If there is information available and there is no previous message
@@ -115,7 +115,7 @@ def check_for_update(context: CallbackContext) -> None:
 
 
 def save_obj(obj, name):
-    with open('obj/'+ name + '.pkl', 'wb') as f:
+    with open('/var/lib/bill-vaccine-bot/obj/'+ name + '.pkl', 'wb') as f:
         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
 
 
