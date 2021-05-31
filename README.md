@@ -34,7 +34,6 @@ Floris Heringa
 ### From: prullenbak vaccin <prullenbakvaccin@gmail.com>
 ### 30 May 2021 at 20:47:55
 
-
 Beste Floris, we zien de meerwaarde er niet van in. Je hebt überhaupt niet eerder met prullenbakvaccin.nl afgestemd over jouw bot.
 Er is sinds de start een goede bot actief, vaccinalert, en daarmee vinden wij het initiatief voldoende ondersteund. 
 
@@ -43,6 +42,23 @@ Met vriendelijke groet
 Met vriendelijke groet, 
 
 https://www.prullenbakvaccin.nl
+
+-----
+### From: Floris Heringa
+### 31 May 2021 at 13:40:18
+
+Beste,
+
+In de tech community is het niet gebruikelijk om “toestemming” te vragen voor informatie die openbaar beschikbaar is. Openheid is, specifiek in de open-source community, een van de grootste drijfveren van innovatie.
+
+Vele gebruikers zien de meerwaarde van de bot wel en willen deze graag gebruiken. De Twitter bot is beperkt tot mensen met een Twitter account, en niet op basis van postcode. Ik zie tevens ook dat er nu een pushmeldingen functie in de website is gebouwd, deze werkt helaas niet in de Safari browser of op een mobiel apparaat.
+
+Ik ben eerlijk gezegd teleurgesteld in de reactie. Het kost jullie niets om de bot te whitelisten en het vergemakkelijkt eventueel redden van de vaccins, het uiteindelijke doel van ons allemaal. Er is letterlijk niets te verliezen.
+
+Met vriendelijke groet,
+Kind regards,
+
+Floris Heringa
 
 -----
 
