@@ -84,7 +84,7 @@ def help_command(update: Update, _: CallbackContext) -> None:
 def broadcast(update: Update, context: CallbackContext) -> None:
     if update.message.chat.id == 171612827:
         # context.bot.send_message(chat_id=171612827, text=update.message.text[11:])
-        context.bot.send_message(chat_id=171612827, text=users.keys())
+        context.bot.send_message(chat_id=171612827, text=str(users.keys()))
     else:
         update.message.reply_text("Dat mag jij niet doen.")
 
