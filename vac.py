@@ -80,6 +80,10 @@ def postcode(update: Update, context: CallbackContext) -> None:
 def help_command(update: Update, _: CallbackContext) -> None:
     update.message.reply_text('Help!')
 
+def broadcast(update: Update, context: CallbackContext) -> None:
+    if update.message.chat.id == 171612827:
+        context.bot.send_message(chat_id=171612827, text=update.message.text)
+
 
 def check_for_update(context: CallbackContext) -> None:
 # def check_for_update(update: Update, context: CallbackContext) -> None:
@@ -126,6 +130,7 @@ def main() -> None:
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(CommandHandler("help", help_command))
     dispatcher.add_handler(MessageHandler(Filters.regex('^[1-9][0-9]{3} ?(?!sa|sd|ss|SA|SD|SS)[A-z]{2}$'), postcode))
+    dispatcher.add_handler(CommandHandler("broadcast", broadcast))
 
     check_for_update_job = updater.job_queue.run_repeating(check_for_update, interval=300, first=0)
 
