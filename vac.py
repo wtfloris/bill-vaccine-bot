@@ -80,9 +80,10 @@ def postcode(update: Update, context: CallbackContext) -> None:
 def help_command(update: Update, _: CallbackContext) -> None:
     update.message.reply_text('Help!')
 
+
 def broadcast(update: Update, context: CallbackContext) -> None:
     if update.message.chat.id == 171612827:
-        context.bot.send_message(chat_id=171612827, text=update.message.text)
+        context.bot.send_message(chat_id=171612827, text=update.message.text[11:])
 
 
 def check_for_update(context: CallbackContext) -> None:
