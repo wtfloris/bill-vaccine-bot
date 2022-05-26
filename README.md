@@ -1,4 +1,7 @@
 # bill-vaccine-bot
+-----
+This is now archived as COVID-19 has been canceled. See you at the next pandemic!
+-----
 A Telegram bot to notify people of vaccines becoming available on prullenbakvaccin.nl
 
 You can use the bot here: https://t.me/BillGatesVaccine_bot
